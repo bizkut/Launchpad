@@ -591,11 +591,11 @@ void MainWindow::startFullScan(bool forceConfigRestore) {
     QString folder = settings.value("swg_folder").toString();
     QDir checkDir(folder);
 
-    if (!checkDir.exists() || folder.isEmpty() || !FileScanner::checkSwgFolder(folder)) {
+    /* if (!checkDir.exists() || folder.isEmpty() || !FileScanner::checkSwgFolder(folder)) {
         QMessageBox::warning(this, "ERROR", "Invalid game folder!");
 
         return;
-    }
+    } */
 
     bool restoreConfigFiles = forceConfigRestore ? true : QMessageBox::question(this, "Config files", "Do you want to restore the config files too?") == QMessageBox::Yes;
 

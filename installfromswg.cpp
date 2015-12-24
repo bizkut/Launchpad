@@ -109,7 +109,7 @@ int InstallFromSWG::checkSWGFolder() {
         return 1;
 
     QStringList filesToCheck;
-    filesToCheck << "bottom.tre" << "data_animation_00.tre" << "data_texture_04.tre";
+    filesToCheck << "required2.txt" << "Qt5Core.dll" << "Qt5Gui.dll";
 
     for (int i = 0; i < filesToCheck.size(); ++i) {
 #ifdef Q_OS_WIN32
