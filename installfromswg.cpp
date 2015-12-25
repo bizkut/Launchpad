@@ -127,22 +127,24 @@ int InstallFromSWG::checkSWGFolder() {
 int InstallFromSWG::installFiles() {
     QSettings settings;
 
-    QMessageBox::information(this, "SWGEmu", "Please choose a valid Star Wars Galaxies installation");
+    // QMessageBox::information(this, "SWGEmu", "Please choose this Launchpad directory location");
 
-    swgfolder = QFileDialog::getExistingDirectory(this, tr("Open Directory"),
+    /* swgfolder = QFileDialog::getExistingDirectory(this, tr("Open Directory"),
                                                    "/home",
                                                    QFileDialog::ShowDirsOnly
                                                    | QFileDialog::DontResolveSymlinks);
+    */
+    swgfolder = "/";
 
     int validFolder = checkSWGFolder();
 
-    if (validFolder != 0) {
+    /* if (validFolder != 0) {
         QMessageBox::warning(this, "Folder", "The folder you selected isnt a valid Star Wars Galaxies installation!");
 
         return 1;
-    }
+    } */
 
-    QMessageBox::information(this, "SWGEmu", "Please choose where you want to install SWGEmu");
+    QMessageBox::information(this, "SWGEmu", "Please choose where you want to install Star Wars Galaxies Malaysia Fan Club Edition");
 
     emuFolder = QFileDialog::getExistingDirectory(this, tr("Open Directory"),
                                                     "/home",
