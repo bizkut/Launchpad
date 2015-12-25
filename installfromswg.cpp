@@ -136,9 +136,9 @@ int InstallFromSWG::installFiles() {
     */
     swgfolder = "/";
 
-    int validFolder = checkSWGFolder();
+    /* int validFolder = checkSWGFolder();
 
-    /* if (validFolder != 0) {
+     if (validFolder != 0) {
         QMessageBox::warning(this, "Folder", "The folder you selected isnt a valid Star Wars Galaxies installation!");
 
         return 1;
