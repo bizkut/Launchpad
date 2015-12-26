@@ -325,6 +325,10 @@ void MainWindow::readNovaServerStatus() {
     novaNetworkAccessManager.get(QNetworkRequest(QUrl("http://www.swgemu.com/status/nova.xml")));
 }
 
+void MainWindow::readBimaServerStatus() {
+    novaNetworkAccessManager.get(QNetworkRequest(QUrl("http://10.0.0.58/status/bima.xml")));
+}
+
 void MainWindow::checkForUpdates() {
     SelfUpdater updater(false, this);
     updater.execUpdate();
@@ -354,8 +358,9 @@ void MainWindow::updateServerStatus() {
     //ui->statusBar->showMessage("Updating server status..");
     ui->textBrowser->clear();
 
-    readBasiliskServerStatus();
-    readNovaServerStatus();
+    // readBasiliskServerStatus();
+    // readNovaServerStatus();
+    readBimaServerStatus();
 }
 
 void MainWindow::triggerMultipleInstances(bool newValue) {
@@ -1298,7 +1303,9 @@ void MainWindow::statusXmlIsReady(QNetworkReply* reply) {
 
     QDateTime timestamp;
     timestamp.setTime_t(values->value("timestamp").toULong());
-    stream << "<div align=\"center\">Last updated: " << timestamp.toString(Qt::SystemLocaleShortDate) << "</div><br><br>";
+    stream << "<div align=\"center\">Last updated: " << timestamp.toString(Qt::SystemLocaleShortDate) << "</div><br>";
+    stream << "<div align=\"center\"><i>Notice:</i> " << values->value("notice") << "</div><br><br>";
+
 
     ui->textBrowser->insertHtml(labelText);
 }

@@ -51,6 +51,7 @@ public slots:
   void downloadFileFinished(QNetworkReply *reply);
   void readBasiliskServerStatus();
   void readNovaServerStatus();
+  void readBimaServerStatus();
   void webPageLoadFinished(bool ok);
   void downloadProgress(qint64 bytesReceived, qint64 bytesTotal);
   void closeEvent(QCloseEvent *event);
