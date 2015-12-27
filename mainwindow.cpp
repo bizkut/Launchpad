@@ -29,16 +29,17 @@
 
 #include "gamemods.h"
 
-//#define ENABLE_MACRO_EDITOR
+#define ENABLE_MACRO_EDITOR
 
-QString MainWindow::patchUrl = "http://www.launchpad2.net/SWGEmu/"; // Insert download URL here
+//QString MainWindow::patchUrl = "http://www.launchpad2.net/SWGEmu/"; // Insert download URL here
+QString MainWindow::patchUrl = "http://cdnwarz.kongsi.asia/swg/patches/"; // Insert download URL here
 //QString MainWindow::newsUrl = "http://www.swgemu.com/forums/index.php#bd";
 QString MainWindow::newsUrl = "http://www.swgemu.com/forums/forum.php";
 QString MainWindow::gameExecutable = "SWGEmu.exe";
 #ifdef Q_OS_WIN32
-QString MainWindow::selfUpdateUrl = "http://launchpad2.net/setup.cfg"; // Insert update URL here
+QString MainWindow::selfUpdateUrl = "http://cdnwarz.kongsi.asia/swg/setup.cfg"; // Insert update URL here
 #else
-QString MainWindow::selfUpdateUrl = "http://launchpad2.net/setuplinux86_64.cfg"; // Insert linux update URL here
+QString MainWindow::selfUpdateUrl = "http://cdnwarz.kongsi.asia/swg/setuplinux86_64.cfg"; // Insert linux update URL here
 #endif
 const QString MainWindow::version = "0.23";
 
@@ -626,8 +627,8 @@ void MainWindow::startFullScan(bool forceConfigRestore) {
         filesToDownload.append(patchUrl + "swgemu_preload.cfg");
         //filesToDownload.append(patchUrl + "Emu_opt.cfg");
         filesToDownload.append(patchUrl + "swgemu_machineoptions.iff");
-        filesToDownload.append(patchUrl + "options.cfg");
-        //filesToDownload.append(patchUrl + "user.cfg");
+        //filesToDownload.append(patchUrl + "options.cfg");
+        filesToDownload.append(patchUrl + "user.cfg");
     }
 
     bool multiThreaded = settings.value("multi_threaded_full_scan", false).toBool();
@@ -1304,8 +1305,8 @@ void MainWindow::statusXmlIsReady(QNetworkReply* reply) {
     QDateTime timestamp;
     timestamp.setTime_t(values->value("timestamp").toULong());
     stream << "<div align=\"center\">Last updated: " << timestamp.toString(Qt::SystemLocaleShortDate) << "</div><br>";
-    stream << "<div align=\"center\"><i>Notice:</i> " << values->value("notice") << "</div><br><br>";
-
+    stream << "<div align=\"center\"><i>Notice:</i> " << values->value("notice") << "</div><br>";
+    stream << "<div align=\"center\">" << values->value("banner") << "</div><br><br>";
 
     ui->textBrowser->insertHtml(labelText);
 }
@@ -1318,7 +1319,7 @@ void MainWindow::webPageLoadFinished(bool ok) {
 
     ui->statusBar->showMessage("swgemu.com loaded.");
 
-   //updateDonationMeter();
+    //updateDonationMeter();
     //e.
 }
 

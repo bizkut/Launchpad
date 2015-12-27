@@ -134,7 +134,7 @@ int InstallFromSWG::installFiles() {
                                                    QFileDialog::ShowDirsOnly
                                                    | QFileDialog::DontResolveSymlinks);
     */
-    swgfolder = "/";
+    swgfolder = "C:/";
 
     /* int validFolder = checkSWGFolder();
 
