@@ -34,7 +34,7 @@
 //QString MainWindow::patchUrl = "http://www.launchpad2.net/SWGEmu/"; // Insert download URL here
 QString MainWindow::patchUrl = "http://cdnwarz.kongsi.asia/swg/patches/"; // Insert download URL here
 //QString MainWindow::newsUrl = "http://www.swgemu.com/forums/index.php#bd";
-QString MainWindow::newsUrl = "http://www.swgemu.com/forums/forum.php";
+QString MainWindow::newsUrl = "http://swg.openkod.com";
 QString MainWindow::gameExecutable = "SWGEmu.exe";
 #ifdef Q_OS_WIN32
 QString MainWindow::selfUpdateUrl = "http://cdnwarz.kongsi.asia/swg/setup.cfg"; // Insert update URL here
@@ -51,7 +51,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     QCoreApplication::setOrganizationName("SWGEmu");
-    QCoreApplication::setOrganizationDomain("swgemu.com");
+    QCoreApplication::setOrganizationDomain("swg.openkod.com");
     QCoreApplication::setApplicationName("Launchpad");
 
     requiredFilesCount = 0;
@@ -205,7 +205,7 @@ MainWindow::MainWindow(QWidget *parent) :
             startLoadBasicCheck();
         } else
 #endif
-        QMessageBox::warning(this, "Error", "Please set the swgemu folder in Settings->Options or install using Settings->Install From SWG option");
+        QMessageBox::warning(this, "Error", "Please set the swgemu folder in Settings->Options or install using Settings->Select install folder option");
     }
 
     restoreGeometry(settingsOptions.value("mainWindowGeometry").toByteArray());
@@ -327,7 +327,7 @@ void MainWindow::readNovaServerStatus() {
 }
 
 void MainWindow::readBimaServerStatus() {
-    novaNetworkAccessManager.get(QNetworkRequest(QUrl("http://10.0.0.58/status/bima.xml")));
+    novaNetworkAccessManager.get(QNetworkRequest(QUrl("http://status.swg.openkod.com/bima.xml")));
 }
 
 void MainWindow::checkForUpdates() {
@@ -952,7 +952,7 @@ void MainWindow::enableStart() {
     ui->actionFolders->setEnabled(true);
 
     ui->label_current_work->setStyleSheet("color:green");
-    ui->label_current_work->setText("Basic checks passed.");
+    ui->label_current_work->setText("Basic checks passed. Ready to play.");
 }
 
 void MainWindow::loadFinished() {
@@ -1313,11 +1313,11 @@ void MainWindow::statusXmlIsReady(QNetworkReply* reply) {
 
 void MainWindow::webPageLoadFinished(bool ok) {
     if (!ok) {
-        ui->statusBar->showMessage("Error loading swgemu.com");
+        ui->statusBar->showMessage("Error loading swg.openkod.com");
         return;
     }
 
-    ui->statusBar->showMessage("swgemu.com loaded.");
+    ui->statusBar->showMessage("swg.openkod.com loaded.");
 
     //updateDonationMeter();
     //e.

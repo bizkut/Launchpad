@@ -7,7 +7,7 @@
 #include "mainwindow.h"
 #include <QSettings>
 
-QString LoginServers::defaultLoginAddress = "login.swgemu.com";
+QString LoginServers::defaultLoginAddress = "login.swg.openkod.com";
 quint16 LoginServers::defaultLoginPort = 44453;
 
 LoginServers::LoginServers(QWidget *parent) :
@@ -45,7 +45,7 @@ void LoginServers::reloadServers() {
     }
 
     if (ui->listWidget->count() == 0)
-        addServer("swgemu.com", defaultLoginAddress, defaultLoginPort);
+        addServer("swg.openkod.com", defaultLoginAddress, defaultLoginPort);
 
     settings.endArray();
 }
@@ -77,8 +77,8 @@ void LoginServers::removeServer() {
         return;
     }
 
-    if (server->getName() == "swgemu.com") {
-        QMessageBox::warning(this, "Error", "Can't delete swgemu.com server!");
+    if (server->getName() == "swg.openkod.com") {
+        QMessageBox::warning(this, "Error", "Can't delete swg.openkod.com server!");
         return;
     }
 

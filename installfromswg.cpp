@@ -109,7 +109,7 @@ int InstallFromSWG::checkSWGFolder() {
         return 1;
 
     QStringList filesToCheck;
-    filesToCheck << "required2.txt" << "Qt5Core.dll" << "Qt5Gui.dll";
+    filesToCheck << "Mss32.dll" << "swgemu.cfg" << "swgemu_live.cfg";
 
     for (int i = 0; i < filesToCheck.size(); ++i) {
 #ifdef Q_OS_WIN32

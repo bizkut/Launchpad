@@ -539,7 +539,7 @@ p, li { white-space: pre-wrap; }
      <normaloff>:/img/installfromswg.svg</normaloff>:/img/installfromswg.svg</iconset>
    </property>
    <property name="text">
-    <string>Install from SWG</string>
+    <string>Select install forder</string>
    </property>
   </action>
  </widget>
