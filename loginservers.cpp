@@ -45,7 +45,7 @@ void LoginServers::reloadServers() {
     }
 
     if (ui->listWidget->count() == 0)
-        addServer("swg.openkod.com", defaultLoginAddress, defaultLoginPort);
+        addServer("SWG Malaysia", defaultLoginAddress, defaultLoginPort);
 
     settings.endArray();
 }
@@ -77,8 +77,8 @@ void LoginServers::removeServer() {
         return;
     }
 
-    if (server->getName() == "swg.openkod.com") {
-        QMessageBox::warning(this, "Error", "Can't delete swg.openkod.com server!");
+    if (server->getName() == "SWG Malaysia") {
+        QMessageBox::warning(this, "Error", "Can't delete SWG Malaysia server!");
         return;
     }
 

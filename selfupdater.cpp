@@ -99,7 +99,7 @@ void SelfUpdater::downloadVersionFinished(QNetworkReply* reply) {
         return;
     } else {
         if (silent) {
-            if (QMessageBox::question(this, "Update", "A new version of the launchpad has been found, do you want to update?") != QMessageBox::Yes)
+            if (QMessageBox::question(this, "Update", "A new version of the launcher has been found, do you want to update?") != QMessageBox::Yes)
                 return;
         }
     }

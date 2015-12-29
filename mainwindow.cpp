@@ -34,14 +34,14 @@
 //QString MainWindow::patchUrl = "http://www.launchpad2.net/SWGEmu/"; // Insert download URL here
 QString MainWindow::patchUrl = "http://cdnwarz.kongsi.asia/swg/patches/"; // Insert download URL here
 //QString MainWindow::newsUrl = "http://www.swgemu.com/forums/index.php#bd";
-QString MainWindow::newsUrl = "http://swg.openkod.com";
+QString MainWindow::newsUrl = "https://swg.openkod.com/category/1/announcements";
 QString MainWindow::gameExecutable = "SWGEmu.exe";
 #ifdef Q_OS_WIN32
 QString MainWindow::selfUpdateUrl = "http://cdnwarz.kongsi.asia/swg/setup.cfg"; // Insert update URL here
 #else
 QString MainWindow::selfUpdateUrl = "http://cdnwarz.kongsi.asia/swg/setuplinux86_64.cfg"; // Insert linux update URL here
 #endif
-const QString MainWindow::version = "0.23";
+const QString MainWindow::version = "0.24";
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
