@@ -45,7 +45,7 @@ void LoginServers::reloadServers() {
     }
 
     if (ui->listWidget->count() == 0)
-        addServer("SWG Malaysia", defaultLoginAddress, defaultLoginPort);
+        addServer("SWG MTG", defaultLoginAddress, defaultLoginPort);
 
     settings.endArray();
 }
@@ -77,8 +77,8 @@ void LoginServers::removeServer() {
         return;
     }
 
-    if (server->getName() == "SWG Malaysia") {
-        QMessageBox::warning(this, "Error", "Can't delete SWG Malaysia server!");
+    if (server->getName() == "SWG MTG") {
+        QMessageBox::warning(this, "Error", "Can't delete SWG MTG server!");
         return;
     }
 

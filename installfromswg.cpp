@@ -144,7 +144,7 @@ int InstallFromSWG::installFiles() {
         return 1;
     } */
 
-    QMessageBox::information(this, "SWGEmu", "Please choose where you want to install Star Wars Galaxies Malaysia Fan Club Edition");
+    QMessageBox::information(this, "SWGEmu", "Please choose where you want to install Star Wars Galaxies Mod The Galaxy Edition");
 
     emuFolder = QFileDialog::getExistingDirectory(this, tr("Open Directory"),
                                                     "/home",
